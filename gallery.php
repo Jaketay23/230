@@ -5,7 +5,6 @@ require 'includes/dbhandler.php';
 
 <main>
 <link rel="stylesheet" href="css/gallery.css">
-<link href="css/reviews.css" rel="stylesheet">
     <h1>Gallery</h1>
         <div class="gallery-container">
             <?php
