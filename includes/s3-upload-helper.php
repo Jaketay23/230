@@ -4,7 +4,7 @@ require "../vendor/autoload.php";
 
 use Aws\S3\S3Client;
 
-use Aws\Exception\AwsException;
+use Aws\Exception\S3Exception;
 
 
 if(isset($_POST['s3-submit'])){

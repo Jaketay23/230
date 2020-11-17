@@ -47,6 +47,9 @@ session_start();
                     <li class="nav-item active">
                         <a class="nav-link" href="../index.php">Home <span class="sr-only">(current)</span></a>
                     </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../signup.php">Home <span class="sr-only">(current)</span></a>
+                    </li>
                 </ul>
             </div>
         </div>
