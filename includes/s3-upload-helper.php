@@ -8,13 +8,13 @@ use Aws\Exception\AwsException;
 
 
 if(isset($_POST['s3-submit'])){
-    $bucketName = "jaketay-s3";
+    $bucketName = "jaketay230-s3";
 
     $file = $_FILES['s3-image'];
-    $file_name = $_FILES['name'];
-    $file_tmp_name = $_FILES['tmp_name'];
-    $file_error = $_FILES['error'];
-    $file_size = $_FILES['size'];
+    $file_name = $file['name'];
+    $file_tmp_name = $file['tmp_name'];
+    $file_error = $file['error'];
+    $file_size = $file['size'];
 
     $ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
 
@@ -23,15 +23,14 @@ if(isset($_POST['s3-submit'])){
             array('region'=>'us-east-1',
             'version'=>'latest',
             'credentials'=> array(
-                'key' => 'AKIAQEXZBDAOYJP75GUP',
-                'secret' => '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'
-
+                'key' => "AKIAQEXZBDAOUS7LBTN6",
+                'secret' => "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"
             ))
             );
         $result = $s3Client->putObject([
 
             'Bucket'=>$bucketName,
-            'Key'=> 'test_uploasds/'.uniqid('',true).'.'.$ext,
+            'Key'=> 'test_uploads/'.uniqid('',true).'.'.$ext,
             'SourceFile'=>$file_tmp_name,
             'ACL'=>'public-read'
         ]);
