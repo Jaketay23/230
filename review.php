@@ -6,7 +6,7 @@ require 'includes/review-helper.php';
 
 <main>
     <span id="testAvg"></span>
-    <div class = "container" align="center" style="max-width: 800px">
+    <div class ="container" align="center" style="max-width: 800px">
         <div class ="my-auto">
             <form id="review-form" action="includes/review-helper.php" method="post">
                 <div class="container">
@@ -16,25 +16,25 @@ require 'includes/review-helper.php';
                     <i class="fa fa-star fa-2x star-rev" data-index="4"></i>
                     <i class="fa fa-star fa-2x star-rev" data-index="5"></i>
                 </div>
-                <div class = "form-group" style = "margin-top: 15px;">
-                    <label class="title-label" for="review-title" style="font-size: 16px; font-weight: bold;">Title</label>
-                    <input type = "text" name="review-title" id="review-title" style="width: 100%; margin-bottom: 10px;">
-                    <textarea class="form-control" id="review-text" name="review" cols="10" rows="3" placeholder="Enter a comment..."></textarea>
-                    <input type="hidden" name="rating" id="rating">
-                    <input type="hidden" name="item_id" value="<?php echo $_GET['id'];?>">
-                </div>
-                <div class = "form-group">
+             <div class="form-group" style ="margin-top: 15px;">
+                <label class="title-label" for="review-title" style="font-size: 16px; font-weight: bold;">Title</label>
+                <input type ="text" name="review-title" id="review-title" style="width: 100%; margin-bottom: 10px;">
+                <textarea class ="form-control" id="review-text" name ="review" cols="50" rows="3" placeholder="enter a comment...."></textarea>
+                <input type = "hidden" name = "rating" id="rating">
+                <input type = "hidden" name="item_id" value="<?php echo $_get['id'];?>">
+             </div>
+                <div class="form-group">
                     <button class="btn btn-outline-danger" id="review-submit" name="review-submit" type="submit" style="width: 100%;">Review</button>
                 </div>
             </form>
         </div>
-    </div>
+    </div?>
     <span id="review_list"></span>
 </main>
 <script type="text/javascript">
 
 var rateIndex = -1;
-var id = <?php echo $_GET['id'];?>;
+var id = <?php echo $_GET['id']?>;
 $(document).ready(function() {
     reset_star();
 
@@ -69,20 +69,20 @@ $(document).ready(function() {
         $('.star-rev').css('color', 'grey');
     }
 
+
     function setStars(max){
         for(var i=0; i < max; i++){
-            $('.star-rev:eq('+i+')').css('color', 'orange');
+            $('.star-rev:eq('+i+')').css('color', 'goldenrod');
         }
         document.getElementById('rating').value = parseInt(localStorage.getItem('rating'));
         console.log(id);
     }
 
-
     //Used to interchangeably send GET requests for review display data. 
     function xhr_getter(prefix, element){
-        var xhttp = new XMLHttpRequest();
+        var xhttp =new XMLHttpRequest();
         xhttp.onreadystatechange = function(){
-            if(this.readyState == 4 && this.status == 200){
+            if(this.readyState == 4 && this.status==200){
                 document.getElementById(element).innerHTML = this.responseText;
             }
         };
@@ -90,6 +90,5 @@ $(document).ready(function() {
         xhttp.open("GET", url, true);
         xhttp.send();
     }
-
 });
 </script>
