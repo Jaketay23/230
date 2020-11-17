@@ -34,7 +34,7 @@ require 'includes/review-helper.php';
 <script type="text/javascript">
 
 var rateIndex = -1;
-var id = <?php echo $_GET['id']?>;
+var id = <?php echo $_GET['id'];?>;
 $(document).ready(function() {
     reset_star();
 
