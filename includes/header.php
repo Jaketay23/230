@@ -42,8 +42,8 @@ session_start();
                         echo '<li class="nav-item">
                         <a class="nav-link" href="login.php">Login</a>
                         </li>
-                        <li class="nav-item active">
-                        <a class="nav-link" href="../signup.php">Home <span class="sr-only">(current)</span></a>
+                        <li class = "nav-item">
+                        <a class="nav-link" href="signup.php">Sign Up</a>
                         </li>';
                     }
                     ?>
